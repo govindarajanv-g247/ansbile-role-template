@@ -1,18 +1,17 @@
-
 ---
-- name: Ensure apt-transport-https is installed
-  apt:
-    name: apt-transport-https
+    - name: Ensure apt-transport-https is installed
+      apt:
+          name: apt-transport-https
 
-- name: Add Yarn apt key
-  apt_key:
-    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    - name: Add Yarn pubkey
+      shell: curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
 
-- name: Add Yarn repository
-  apt_repository:
-    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
-    filename: yarn
+    - name: Add Yarn repo
+      shell: echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-- name: Install Yarn
-  apt:
-    name: yarn
+    - name: Update apt cache
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Install Yarn
+      apt:
+          name: yarn

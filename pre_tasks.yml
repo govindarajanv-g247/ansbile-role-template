@@ -1,24 +1,24 @@
 ---
-- name: Verify Ansible version
-  assert:
-    that: "ansible_version.full is version_compare('2.9', '>=')"
-    fail_msg: This Ansible playbook requires Ansible version >= 2.9.1. Current version is {{ ansible_version.full }}
-    quiet: yes
+    - name: Verify Ansible version
+      assert:
+          that: ansible_version.full is version_compare('2.9', '>=')
+          fail_msg: This Ansible playbook requires Ansible version >= 2.9.1. Current version is {{ ansible_version.full }}
+          quiet: yes
 
-- name: Update repos and upgrade all packages
-  apt:
-    update_cache: yes
-    upgrade: safe
-    force_apt_get: yes
+    - name: Update repos and upgrade all packages
+      apt:
+          update_cache: yes
+          upgrade: safe
+          force_apt_get: yes
 
-- name: Create ~/.local/bin directory if missing
-  file:
-    path: ~/.local/bin
-    state: directory
-  become: no
+    - name: Create ~/.local/bin directory if missing
+      file:
+          path: ~/.local/bin
+          state: directory
+      become: no
 
-- name: Add .local/bin to $PATH
-  lineinfile:
-    path: ~/.bashrc
-    line: PATH="$HOME/.local/bin:$PATH"
-  become: no
+    - name: Add .local/bin to $PATH
+      lineinfile:
+          path: ~/.bashrc
+          line: PATH="$HOME/.local/bin:$PATH"
+      become: no

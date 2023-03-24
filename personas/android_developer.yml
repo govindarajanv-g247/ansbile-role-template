@@ -1,0 +1,16 @@
+---
+    - hosts: all
+
+      vars_files:
+          - default.config.yml
+
+      pre_tasks:
+          - import_tasks: pre_tasks.yml
+            tags: [mandatory, housekeeping]
+      roles:
+          - role: android_developer
+            tags: [all_users]
+      post_tasks:
+          - import_tasks: post_tasks.yml
+            tags: [mandatory, housekeeping]
+      become: yes

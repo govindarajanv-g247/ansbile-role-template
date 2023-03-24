@@ -1,8 +1,8 @@
 ---
-- name: roles.developer.tasks.aws_session_manager
-  ansible.builtin.debug:
-    msg:
-    - "applying tasks under roles.developer.tasks.aws_session_manager"
-- name: Install AWS Session Manager Plugin
-  apt:
-    deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
+    - name: roles.developer.tasks.aws_session_manager
+      ansible.builtin.debug:
+          msg:
+              - applying tasks under roles.developer.tasks.aws_session_manager
+    - name: Install AWS Session Manager Plugin
+      apt:
+          deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb

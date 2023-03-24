@@ -1,0 +1,12 @@
+---
+    - name: roles.mobile_developer.tasks.main
+      ansible.builtin.debug:
+          msg:
+              - applying tasks under roles.mobile_developer.tasks.main
+#- name: Call the 'common' role to do some general setup
+#  include: ../../common/tasks/main.yml
+    - name: include frontend_developer
+      include_role:
+          name: frontend_developer
+
+    - import_tasks: appium.yml

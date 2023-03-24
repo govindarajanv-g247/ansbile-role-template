@@ -1,0 +1,14 @@
+---
+    - name: roles.mobile_developer.tasks.appium
+      ansible.builtin.debug:
+          msg:
+              - applying tasks under roles.mobile_developer.tasks.appium
+    - name: install NPM
+      shell: npm i
+      args:
+          chdir: /home/ubuntu
+
+    - name: Install appium
+      npm:
+          name: appium
+          global: yes

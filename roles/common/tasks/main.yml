@@ -1,7 +1,7 @@
 ---
-- name: roles.common.tasks.main
-  ansible.builtin.debug:
-    msg:
-    - "applying tasks under roles.common.tasks.main"
-- import_tasks: apt.yml
+    - name: roles.common.tasks.main
+      ansible.builtin.debug:
+          msg:
+              - applying tasks under roles.common.tasks.main
+    - import_tasks: apt.yml
 #- import_tasks: snap.yml

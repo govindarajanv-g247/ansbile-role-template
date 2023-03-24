@@ -7,3 +7,6 @@ skip_list:
   - name[missing]
   - no-changed-when
   - risky-file-permissions
+exclude_paths:
+  - '.github/'
+  - 'personas/'
