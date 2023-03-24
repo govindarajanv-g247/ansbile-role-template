@@ -1,3 +1,7 @@
 ---
 - import_tasks: apt.yml
 #- import_tasks: snap.yml
+- name: roles.common.tasks.main
+  ansible.builtin.debug:
+    msg:
+    - "roles.common.tasks.main"

@@ -16,3 +16,8 @@
   alternatives:
     name: editor
     path: /usr/bin/vim.basic
+
+- name: roles.common.tasks.apt
+  ansible.builtin.debug:
+    msg:
+    - "roles.common.tasks.apt"
