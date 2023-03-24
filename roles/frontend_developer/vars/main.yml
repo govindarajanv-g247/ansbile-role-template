@@ -1,2 +1,1 @@
-aws_nuke:
-  version: 2.17.0
+ansible_distribution_release: xenial
