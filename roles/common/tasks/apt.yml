@@ -1,0 +1,18 @@
+---
+- name: Add official KeePassXC repository
+  apt_repository:
+    repo: ppa:phoerious/keepassxc
+
+- name: Install apt packages
+  apt:
+    name: "{{ packages }}"
+    force_apt_get: yes
+  vars:
+    packages:
+    - elinks
+    - snapd
+
+- name: Set default editor to vim
+  alternatives:
+    name: editor
+    path: /usr/bin/vim.basic

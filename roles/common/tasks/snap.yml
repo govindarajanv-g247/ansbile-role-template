@@ -1,0 +1,7 @@
+---
+- name: Install classic snaps
+  snap:
+    name: "{{ item }}"
+    classic: yes
+  loop:
+      - keepassxc

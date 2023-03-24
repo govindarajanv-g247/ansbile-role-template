@@ -1,0 +1,12 @@
+---
+- hosts: all
+  pre_tasks:
+    - import_tasks: pre_tasks.yml
+      tags: ['mandatory', 'housekeeping']
+  roles:
+    - role: common
+      tags: ['all_users']
+  post_tasks:
+    - import_tasks: post_tasks.yml
+      tags: ['mandatory', 'housekeeping']
+  become: yes
