@@ -15,3 +15,9 @@ The file requirements.yml can contain the following
       src: https://github.com/bennojoy/nginx
       version: main
 ```
+
+To run a persona
+
+```bash
+ansible-playbook -i inventory personas/android_developer.yml
+```
