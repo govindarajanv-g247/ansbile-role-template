@@ -1,5 +1,9 @@
 ---
 - hosts: all
+  
+  vars_files:
+    - default.config.yml
+    
   pre_tasks:
     - import_tasks: pre_tasks.yml
       tags: ['mandatory', 'housekeeping']
