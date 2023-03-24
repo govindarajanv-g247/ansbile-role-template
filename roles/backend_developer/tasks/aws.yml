@@ -1,0 +1,21 @@
+---
+- name: roles.developer.tasks.aws
+  ansible.builtin.debug:
+    msg:
+    - "applying tasks under roles.developer.tasks.aws"
+- name: Download aws cli v2
+  get_url:
+    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: /tmp/awscliv2.zip
+  become: no
+
+- name: Unarchive aws cli v2
+  unarchive:
+    src: /tmp/awscliv2.zip
+    dest: /tmp
+  become: no
+
+- name: Install aws cli v2
+  command: /tmp/aws/install || /tmp/aws/install --update
+
+- import_tasks: aws_session_manager_plugin.yml

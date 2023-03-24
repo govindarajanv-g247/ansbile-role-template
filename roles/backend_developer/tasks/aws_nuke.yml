@@ -1,0 +1,10 @@
+---
+- name: roles.developer.tasks.aws_nuke
+  ansible.builtin.debug:
+    msg:
+    - "applying tasks under roles.developer.tasks.aws_nuke"
+- name: Download aws-nuke
+  get_url:
+    url: https://github.com/rebuy-de/aws-nuke/releases/download/v{{ aws_nuke.version }}/aws-nuke-v{{ aws_nuke.version }}-linux-amd64
+    dest: ~/.local/bin/aws-nuke
+    mode: u+x

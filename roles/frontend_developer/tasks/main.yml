@@ -1,0 +1,14 @@
+---
+- name: roles.frontend_developer.tasks.main
+  ansible.builtin.debug:
+    msg:
+    - "applying tasks under roles.frontend_developer.tasks.main"
+#- name: Call the 'common' role to do some general setup
+#  include: ../../common/tasks/main.yml
+- name: include developer
+  include_role:
+    name: developer
+
+- import_tasks: node.yml
+
+- import_tasks: yarn.yml
