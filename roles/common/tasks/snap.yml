@@ -4,4 +4,4 @@
     name: "{{ item }}"
     classic: yes
   loop:
-      - keepassxc
+      - timecard
