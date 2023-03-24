@@ -2,5 +2,8 @@
 - name: Call the 'common' role to do some general setup
   include: ../../common/tasks/main.yml
 - import_tasks: apt.yml
-- import_tasks: aws.yml
+#- import_tasks: aws.yml
 
+- name: include common
+  include_role:
+    name: common
