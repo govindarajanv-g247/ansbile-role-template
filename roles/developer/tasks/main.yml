@@ -1,4 +1,8 @@
 ---
+- name: roles.developer.tasks.main
+  ansible.builtin.debug:
+    msg:
+    - "applying tasks under roles.developer.tasks.main"
 - name: Call the 'common' role to do some general setup
   include: ../../common/tasks/main.yml
 - import_tasks: apt.yml

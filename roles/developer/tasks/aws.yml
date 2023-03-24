@@ -1,4 +1,8 @@
 ---
+- name: roles.developer.tasks.aws
+  ansible.builtin.debug:
+    msg:
+    - "applying tasks under roles.developer.tasks.aws"
 - name: Download aws cli v2
   get_url:
     url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip

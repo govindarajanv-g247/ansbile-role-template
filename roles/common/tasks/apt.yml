@@ -1,4 +1,9 @@
 ---
+- name: roles.common.tasks.apt
+  ansible.builtin.debug:
+    msg:
+    - "applying tasks under roles.common.tasks.apt"
+
 - name: Add official KeePassXC repository
   apt_repository:
     repo: ppa:phoerious/keepassxc
@@ -17,7 +22,4 @@
     name: editor
     path: /usr/bin/vim.basic
 
-- name: roles.common.tasks.apt
-  ansible.builtin.debug:
-    msg:
-    - "roles.common.tasks.apt"
+
