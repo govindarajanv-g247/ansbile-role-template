@@ -4,9 +4,9 @@
           msg:
               - applying tasks under roles.mobile_developer.tasks.appium
     - name: install NPM
-      shell: npm i
+      shell: npm i nodejs-mobile-react-native --save
       args:
-          chdir: /home/ubuntu
+          chdir: /workspaces/ansbile-role-template
 
     - name: Install appium
       npm:

@@ -2,3 +2,7 @@
 .DS_Store
 *.retry
 config.yml
+node_modules/
+nodejs-assets/
+package-lock.json
+package.json

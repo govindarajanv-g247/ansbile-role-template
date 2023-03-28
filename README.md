@@ -19,5 +19,7 @@ The file requirements.yml can contain the following
 To run a persona
 
 ```bash
+
 ansible-playbook -i inventory personas/android_developer.yml
+
 ```

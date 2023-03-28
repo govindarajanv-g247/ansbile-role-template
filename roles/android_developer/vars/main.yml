@@ -1,0 +1,3 @@
+---
+android_sdk_install_location: /home/codespace/
+android_sdk_download_location: https://dl.google.com/android/repository/platform-tools-latest-linux.zip
